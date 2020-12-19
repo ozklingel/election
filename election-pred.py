@@ -17,7 +17,7 @@ tf.compat.v1.disable_eager_execution()
 RANDOMSEED = 40
 
 input_data=pd.read_csv("C:/Users/97254/Downloads/county_factsNew.csv",encoding='latin-1')
-input_data=input_data.iloc[50:180, :].sample(frac=1) # all rows, all the features and no labels
+input_data=input_data.iloc[:, :].sample(frac=1) # all rows, all the features and no labels
 
 input_data.head()
 
@@ -31,7 +31,7 @@ labelencoder=LabelEncoder()
 for col in input_data.columns:
     input_data[col] = labelencoder.fit_transform(input_data[col].astype(str))
 
-target = input_data.iloc[80:150, 22].sample(frac=1)# all ows, label only
+target = input_data.iloc[:, 22].sample(frac=1)# all ows, label only
 max1=[]
 
 
