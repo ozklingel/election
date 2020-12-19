@@ -42,8 +42,8 @@ max1=[]
 
 def load_data():
 
-    data=input_data.iloc[:200, 3:21] # all rows, all the features and no labels
-    target = input_data.iloc[:200, 22]  # all rows, label only
+    data=input_data.iloc[:, 3:21] # all rows, all the features and no labels
+    target = input_data.iloc[:, 22]  # all rows, label only
 
     # Prepend the column of 1s for bias
     L, W  = data.shape
@@ -149,8 +149,8 @@ if __name__ == '__main__':
 
 def load_data():
 
-    data=input_data.iloc[:200, 3:21] # all rows, all the features and no labels
-    target = input_data.iloc[:200, 22]  # all rows, label only
+    data=input_data.iloc[:, 3:21] # all rows, all the features and no labels
+    target = input_data.iloc[:, 22]  # all rows, label only
 
     # Prepend the column of 1s for bias
     L, W  = data.shape
@@ -253,8 +253,8 @@ if __name__ == '__main__':
 
 def load_data():
 
-    data=input_data.iloc[:200, 3:21] # all rows, all the features and no labels
-    target = input_data.iloc[:200, 22]  # all rows, label only
+    data=input_data.iloc[:, 3:21] # all rows, all the features and no labels
+    target = input_data.iloc[:, 22]  # all rows, label only
 
     # Prepend the column of 1s for bias
     L, W  = data.shape
@@ -355,10 +355,10 @@ if __name__ == '__main__':
 # In[8]:
 
 
-def load_iris_data():
+def load_data():
 
-    data=input_data.iloc[:200, 3:21] # all rows, all the features and no labels
-    target = input_data.iloc[:200, 22]  # all rows, label only
+    data=input_data.iloc[:, 3:21] # all rows, all the features and no labels
+    target = input_data.iloc[:, 22]  # all rows, label only
 
     # Prepend the column of 1s for bias
     L, W  = data.shape
@@ -381,7 +381,7 @@ def forward_propagation(X, weights_1, weights_2):
     return y
 
 def run(h_size, stddev, sgd_step):
-    train_x, test_x, train_y, test_y = load_iris_data()
+    train_x, test_x, train_y, test_y = load_data()
 
     # Size of Layers
     x_size = train_x.shape[1]  # Input nodes: 23 features and 1 bias
